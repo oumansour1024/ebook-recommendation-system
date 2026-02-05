@@ -1,0 +1,81 @@
+/* variables.css - Variables CSS personnalisées */
+:root {
+
+    /* Brand Colors (Extracted from READEASE Logo) */
+    --brand-navy: #1a3650;      /* Dark circular background */
+    --brand-teal: #4db6ac;      /* Teal book pages/accent */
+    --brand-gold: #c5a059;      /* Gold book pages/pen nib */
+    --brand-silver: #c0c0c0;    /* Silver outer ring accent */
+    --brand-white: #ffffff;      /* Cloud and text clarity */
+
+    /* Couleurs principales */
+    --primary-color: var(--brand-teal);
+    --primary-dark: var(--brand-navy);
+    --secondary-color: var(--brand-gold);
+    --secondary-dark: var(--brand-silver);
+    
+    /* Couleurs neutres */
+    /* Neutres (Refined for a professional "Universe" feel) */
+    --dark-color: #121f2b;      /* Deeper navy for text */
+    --light-color: #f8f9fa;     /* Off-white for backgrounds */
+    --gray-color: #718096;
+    --gray-light: #e2e8f0;
+    
+    /* Couleurs de statut */
+    --success-color: #2ecc71;
+    --warning-color: #f39c12;
+    --danger-color: #e74c3c;
+    --info-color: #3498db;
+    
+    /* Typographie */
+    --font-primary: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    --font-heading: 'Montserrat', 'Arial', sans-serif;
+    
+    /* Espacements */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-xxl: 3rem;
+    
+    /* Bordures */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+    --border-radius-full: 9999px;
+    
+    /* Ombres */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+    
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-normal: 250ms ease;
+    --transition-slow: 350ms ease;
+    
+    /* Largeurs */
+    --container-max-width: 1200px;
+    --sidebar-width: 250px;
+    
+    /* Z-index */
+    --z-dropdown: 1000;
+    --z-sticky: 1020;
+    --z-fixed: 1030;
+    --z-modal: 1040;
+    --z-popover: 1050;
+    --z-tooltip: 1060;
+}
+
+/* Mode sombre (optionnel) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dark-color: var(--brand-navy);
+        --light-color: var(--brand-white); /* Deep space navy */
+        --gray-light: var(--brand-silver); /* Starry silver for contrast */
+        --gray-color: var(--brand-gold); /* Cosmic gold for text */
+       
+
+    }
+}
