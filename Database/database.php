@@ -33,7 +33,17 @@ function create_dbApp(){
     }
 }
 
+function insert_dbApp($db) {
+    try {
+        $stmt = $db->prepare("INSERT INTO users (name, email, password) VALUES (?, ?, ?)");
+        $stmt->execute(['Admin User', 'admin@gmail.com', password_hash('admin123', PASSWORD_DEFAULT)]);
+        echo "Données d'exemple insérées dans la base de données.\n";
+    } catch (Exception $e) {
+        die('Erreur lors de l\'insertion des données : ' . $e->getMessage());
+    }
+}
 
 
 
-create_dbApp();
+
+// create_dbApp();

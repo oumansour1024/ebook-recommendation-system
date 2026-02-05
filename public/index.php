@@ -1,3 +1,7 @@
+<?php
+ echo basename($_SERVER['REQUEST_URI'])  
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -21,7 +25,8 @@
     <div class="container">
         <h1><?php echo htmlspecialchars($config->get('APP_NAME')); ?></h1>
         
-        <?php if ($config->isDevelopment()): ?>
+        <?php echo htmlspecialchars($config->get('APP_VERSION', 'Inconnue'));
+        if ($config->isDevelopment()): ?>
             <div class="success">
                 Mode développement activé
             </div>

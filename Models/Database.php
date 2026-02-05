@@ -1,7 +1,6 @@
 <?php
 namespace Models;
 
-require_once '/../config/EnvConfig.php';
 
 use Config\EnvConfig;
 use PDO;

@@ -129,4 +129,3 @@ You are free to use, modify, and distribute this project.
 ## 📬 Contact
 
 **Author:** Abdellatif Oumansour
-

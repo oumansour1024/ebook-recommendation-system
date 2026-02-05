@@ -33,6 +33,10 @@
     align-items: center;
     gap: var(--spacing-sm);
 }
+.logo-img {
+    width: 60px;
+    height: 60px;
+}
 
 .logo-icon {
     width: 2rem;
