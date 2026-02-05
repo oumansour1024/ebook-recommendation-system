@@ -1,0 +1,24 @@
+# .gitignore
+.env
+.env.local
+.env.production
+
+# Logs
+logs/
+*.log
+
+# Dependencies
+vendor/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Système
+.DS_Store
+Thumbs.db
+
+# Doc
+.docx
