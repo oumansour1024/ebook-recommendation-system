@@ -128,9 +128,4 @@ You are free to use, modify, and distribute this project.
 
 ## 📬 Contact
 
-<<<<<<< HEAD
 **Author:** Abdellatif Oumansour
-=======
-**Author:** Abdellatif Oumansour
-
->>>>>>> 783909157b2129bcffa867e399f3855505c176b2

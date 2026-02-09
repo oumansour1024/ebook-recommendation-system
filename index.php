@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 spl_autoload_register(function ($class) {
     $parts = explode('\\', $class);
     $className = array_pop($parts);
@@ -23,12 +22,6 @@ use Config\EnvConfig;
 use Controllers\UserController;
 use Models\Database;
 
-=======
-
-require_once __DIR__ . '/config/EnvConfig.php';
-
-use Config\EnvConfig;
->>>>>>> 783909157b2129bcffa867e399f3855505c176b2
 
 // Initialisation de la configuration
 try {
@@ -44,7 +37,6 @@ try {
         ini_set('display_errors', '0');
     }
     
-<<<<<<< HEAD
     date_default_timezone_set($config->get('APP_TIMEZONE', 'UTC')) ;
 
     // Connexion à la base de données
@@ -55,16 +47,12 @@ try {
 
 
 
-=======
-    date_default_timezone_set($config->get('APP_TIMEZONE', 'UTC'));
->>>>>>> 783909157b2129bcffa867e399f3855505c176b2
     
     
 } catch (Exception $e) {
     die('Erreur de configuration : ' . $e->getMessage());
 }
 
-<<<<<<< HEAD
 try {
     // Initialisation de la session
     session_start();
@@ -83,22 +71,15 @@ try {
     
 }
 // header('Refresh:3')
-=======
->>>>>>> 783909157b2129bcffa867e399f3855505c176b2
 ?>
 
 
 <!DOCTYPE html>
 <html lang="fr">
-<<<<<<< HEAD
-
-=======
->>>>>>> 783909157b2129bcffa867e399f3855505c176b2
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Description du projet">
-<<<<<<< HEAD
 
     <title>E-Book | <?php echo htmlspecialchars(ucwords(string:isset($_GET['page'])?$_GET['page']:'Accueil')); ?></title>
 
@@ -174,34 +155,4 @@ try {
 </body>
 
 
-=======
-    
-    <title><?php echo htmlspecialchars($config->get('APP_NAME')); ?></title>
-    
-    <!-- Favicon -->
-    <link rel="icon" href="public/assets/favicon.ico" type="image/x-icon">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/styles.css">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- JavaScript -->
-    <script src="/public/js/main.js" defer></script>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo htmlspecialchars($config->get('APP_NAME')); ?></title>
-    
- <link rel="stylesheet" href="/public/css/styles.css">
-
-</head>
-<body>
-
-
-  
-</body>
->>>>>>> 783909157b2129bcffa867e399f3855505c176b2
 </html>
