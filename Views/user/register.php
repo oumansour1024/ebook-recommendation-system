@@ -2,7 +2,7 @@
     <div class="card shadow-sm" style="width: 100%; max-width: 400px;">
         <div class="card-body p-3">
             <h1 class="text-center mb-3">Inscription</h1>
-            <form method="POST" action="">
+            <form method="POST" action="<?php echo $_SERVER['PHP_SELF']."?page=register";?>">
                 <div class="form-group">
                     <label for="fullname" class="form-label">Nom complet</label>
                     <input type="text" id="fullname" name="name" class="form-input" placeholder="Nom d'utilisateur"

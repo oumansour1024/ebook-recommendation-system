@@ -70,7 +70,7 @@ try {
 } catch (Exception $e) {
     
 }
-
+// header('Refresh:3')
 ?>
 
 
@@ -88,7 +88,7 @@ try {
     <link rel="icon" href="/app/public/assets/favicon.ico" type="image/x-icon">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/app/public/css/styles.css">
+    <link rel="stylesheet" href="<?= "/app/public/css/styles.css"?>">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -105,7 +105,14 @@ try {
 
 <body>
    
-    <?php include __DIR__ . '/Views/layouts/header.php'; ?>
+    <?php 
+    if (isset($_SESSION['user_username'])) {
+        include __DIR__ . '/Views/layouts/headerAuth.php';
+    } else {
+        include __DIR__ . '/Views/layouts/header.php'; 
+    }
+    ?>
+    
     <div class="main-content">
         <div id="toast-container"></div>
         <?php 
@@ -123,6 +130,9 @@ try {
                 case 'logout':
                     $usercontroller->logout();
                     break;
+                case 'profil':
+                    $usercontroller->profil($db->getConnection());
+                    break;
                 case 'dashboard':
                     include __DIR__ . '/Views/dashboard.php';
                     break;
@@ -136,7 +146,7 @@ try {
     <?php include __DIR__ . '/Views/components/message.php'; ?>
 
     <!-- JavaScript -->
-    <script src="/app/public/js/main.js"></script>
+    <script src="<?="/app/public/js/main.js"?>"></script>
     <script>
         <?php if ($messages['message']): ?>
             showToast("<?php echo addslashes($messages['message']); ?>", "<?php echo addslashes($messages['type']); ?>");

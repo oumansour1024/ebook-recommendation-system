@@ -219,7 +219,8 @@
 .dropdown-menu {
     position: absolute;
     top: 100%;
-    left: 0;
+    /* left: 0; */
+    margin-right: 10px;
     background-color: white;
     box-shadow: var(--shadow-md);
     border-radius: var(--border-radius-md);
@@ -254,4 +255,123 @@
     height: 1px;
     background-color: var(--gray-light);
     margin: var(--spacing-xs) 0;
+}
+
+/* État initial : caché */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Juste en dessous du profil */
+    right: 0;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+/* État quand on clique : affiché */
+.dropdown-menu.active {
+    display: block;
+}
+
+/* Pour que le positionnement absolute fonctionne */
+.profil-container {
+    position: relative;
+    cursor: pointer;
+}
+
+/* Profil style  */
+
+.profil-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 50px;
+    transition: background 0.3s;
+}
+
+.profil-container:hover {
+    background: #f3f4f6;
+}
+
+.profil-data {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.username {
+    font-weight: 600;
+    color: var(--text-main);
+    font-size: 0.95rem;
+}
+
+.email {
+    font-size: 0.8rem;
+    color: var(--text-sub);
+}
+
+.profil-img-wrapper {
+    position: relative;
+    width: 45px;
+    height: 45px;
+}
+
+.profil-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary-color);
+}
+
+.add-icon {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    background: var(--primary-color);
+    color: white;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    border: 2px solid white;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: var(--primary-color);
+    width: 200px;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow);
+    padding: 10px 0;
+    display: none; /* مخفية افتراضياً */
+    z-index: 100;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.dropdown-menu.show { display: block; }
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+}
+
+.dropdown-menu a:hover { background: #f0f7ff; color: var(--primary-color); }
+.dropdown-menu hr { border: 0; border-top: 1px solid #eee; margin: 5px 0; }
+.logout { color: #e74c3c !important; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }

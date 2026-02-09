@@ -1,6 +1,7 @@
 <?php 
 
 namespace Models ;
+use PDO;
 use Exception;
 class User {
     private $id;
@@ -37,7 +38,7 @@ class User {
     }
 
     public function setName($name) {
-        $this->name = $name;
+        $this->username = $name;
     }
     public function setEmail($email) {
         $this->email = $email;
@@ -67,6 +68,26 @@ class User {
             return $stmt->fetch();
         } catch (Exception $e) {
             echo "Error finding user: " . $e->getMessage();
+        }
+    }
+
+    public function findById($db, $id) {
+        try {
+            $stmt = $db->prepare("SELECT * FROM users WHERE id = ?");
+            $stmt->execute([$id]);
+            $data = $stmt->fetch(PDO::FETCH_ASSOC);
+            if ($data) {
+                $this->id = $data['id'];
+                $this->setName( $data['username']);
+                $this->email = $data['email'];
+                $this->password = $data['password_hash'];
+                
+                return true;
+            }
+            return false;
+        } catch (Exception $e) {
+            error_log("Error finding user: " . $e->getMessage());
+            return false;
         }
     }
     public function login($db , $email, $password) {

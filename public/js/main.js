@@ -48,3 +48,19 @@ confirmPasswordInput.addEventListener('keyup', function () {
         passwordMatchIcon.style.display = "none";
     }
 });
+
+function showProfil() {
+    // On récupère le conteneur du profil
+    const container = document.querySelector('.profil-container');
+    const dropdown = container.querySelector('.dropdown-menu');
+    
+    // On bascule la classe 'active'
+    dropdown.classList.toggle('active');
+
+    // Optionnel : Fermer le menu si on clique n'importe où ailleurs sur la page
+    window.onclick = function(event) {
+        if (!event.target.closest('.profil-container')) {
+            dropdown.classList.remove('active');
+        }
+    }
+}
