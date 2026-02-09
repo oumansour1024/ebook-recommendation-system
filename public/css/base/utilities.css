@@ -27,8 +27,11 @@
 .align-end { align-items: flex-end; }
 .align-stretch { align-items: stretch; }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 783909157b2129bcffa867e399f3855505c176b2
 /* Grid */
 .grid {
     display: grid;

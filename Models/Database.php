@@ -1,6 +1,10 @@
 <?php
 namespace Models;
 
+<<<<<<< HEAD
+=======
+require_once '/../config/EnvConfig.php';
+>>>>>>> 783909157b2129bcffa867e399f3855505c176b2
 
 use Config\EnvConfig;
 use PDO;

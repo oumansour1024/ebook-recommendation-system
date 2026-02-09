@@ -33,6 +33,7 @@ function create_dbApp(){
     }
 }
 
+<<<<<<< HEAD
 function insert_dbApp($db) {
     try {
         $stmt = $db->prepare("INSERT INTO users (name, email, password) VALUES (?, ?, ?)");
@@ -47,3 +48,9 @@ function insert_dbApp($db) {
 
 
 // create_dbApp();
+=======
+
+
+
+create_dbApp();
+>>>>>>> 783909157b2129bcffa867e399f3855505c176b2

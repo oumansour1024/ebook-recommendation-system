@@ -1,6 +1,7 @@
 <?php 
 
 namespace Models ;
+<<<<<<< HEAD
 use PDO;
 use Exception;
 class User {
@@ -144,4 +145,8 @@ class User {
         ];
     }
 
+=======
+class User {
+    
+>>>>>>> 783909157b2129bcffa867e399f3855505c176b2
 }
